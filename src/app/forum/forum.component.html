@@ -1,0 +1,18 @@
+<div class="forum-container">
+  <div class="forum-header">
+    <h2 class="forum-title">Threads</h2>
+    <mat-form-field class="forum-search">
+      <input type="search" matInput placeholder="Search">
+      <mat-icon matSuffix (click)="clickSearch()">search</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="forum-button-new-thread" (click)="clickNewThread()">New Thread</button>
+    <app-forum-item class="forum-rules"></app-forum-item>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="forum-content">
+    <mat-list *ngFor="let i of numbers">
+      <mat-list-item><app-forum-item [topic]="i"></app-forum-item></mat-list-item>
+      <mat-divider [inset]="true" *ngIf="i != numbers.length"></mat-divider>
+    </mat-list>
+  </div>
+</div>
